@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Editor } from './Editor';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faBold,
+  faStrikethrough,
+  faItalic,
+  faUnderline,
+  faAlignLeft,
+  faAlignCenter,
+  faAlignRight,
+  faAlignJustify,
+  faRotateLeft,
+  faRotateRight,
+} from '@fortawesome/free-solid-svg-icons';
+import './style.css';
 
-function App() {
+library.add(
+  faBold,
+  faStrikethrough,
+  faItalic,
+  faUnderline,
+  faAlignLeft,
+  faAlignRight,
+  faAlignCenter,
+  faAlignJustify,
+  faRotateLeft,
+  faRotateRight
+);
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="text-gray-800 font-bold text-center mt-2">
+        Lexical Editor
+      </h1>
+      <div className="max-w-[900px] mx-4 mt-8 mb-4">
+        <Editor />
+      </div>
     </div>
   );
 }
-
-export default App;
